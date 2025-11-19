@@ -12,4 +12,4 @@ class UserRegisterSchema(BaseModel):
 class UserLoginSchema(BaseModel):
     email:EmailStr=Field(...)
     password: str =Field(...,min_length=6)
-    
+
