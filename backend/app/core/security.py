@@ -6,10 +6,6 @@ import os
 
 from app.core.config import settings
 
-
-
-
-
 pwd_context= CryptContext(schemes="bcrypt", deprecated="auto")
 
 def verify_password(plain_password, hashed_password):
