@@ -84,3 +84,4 @@ def delete_user(user_id:str,current_user: dict=Depends(get_current_user)):
         raise HTTPException(status_code=404,detail="User not found")
     
     
+    
