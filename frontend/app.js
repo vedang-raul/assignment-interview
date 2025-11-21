@@ -58,14 +58,21 @@ async function login() {
 }
 
 async function register() {
-    const username = document.getElementById("reg-username").value;
-    const email = document.getElementById("reg-email").value;
-    const password = document.getElementById("reg-pass").value;
-    const adminCode = document.getElementById("reg-admin").value;
+    // 1. GET ELEMENTS (Not just values)
+    const usernameInput = document.getElementById("reg-username");
+    const emailInput = document.getElementById("reg-email");
+    const passwordInput = document.getElementById("reg-pass");
+    const adminCodeInput = document.getElementById("reg-admin");
     const msg = document.getElementById("auth-msg");
 
-    const payload = { username, email, password };
-    if (adminCode) payload.admin_code = adminCode;
+    // 2. EXTRACT VALUES FOR PAYLOAD
+    const payload = { 
+        username: usernameInput.value, 
+        email: emailInput.value, 
+        password: passwordInput.value 
+    };
+    
+    if (adminCodeInput.value) payload.admin_code = adminCodeInput.value;
 
     try {
         const res = await fetch(`${API_URL}/auth/register`, {
@@ -78,14 +85,20 @@ async function register() {
 
         if (res.ok) {
             alert("Registration successful! Please Login.");
-            toggleForms();
+            
+            // 3. CLEAR THE ELEMENTS (Now this variable exists!)
+            usernameInput.value = "";
+            emailInput.value = "";
+            passwordInput.value = "";
+            adminCodeInput.value = "";
+            
+            toggleForms(); // Switch to login view
         } else {
             msg.innerText = data.detail || "Registration failed";
         }
-    } catch (e) {
-        msg.innerText = "Cannot connect to server.";
-    }
+    } catch (e) { msg.innerText = "Cannot connect to server."; }
 }
+
 
 function logout() {
     localStorage.clear(); // Clears token AND role
