@@ -107,7 +107,6 @@ To test Admin privileges (Create/Delete tasks), use the following code during re
 ---
 
 ## Scalability Note
-*Required Deliverable #5*
 
 This architecture was designed with the "Microservices First" mindset to ensure scalability under high load:
 
