@@ -86,7 +86,7 @@ Designed as a modular, containerized application ready for horizontal scaling.
 
 Once the server is running, access the full interactive API documentation (Swagger UI) at:
 
-**http://localhost:8000/docs**
+**https://assignment-interview.onrender.com/docs**
 
 This interface allows you to test all endpoints (`POST /register`, `POST /login`, `GET /tasks`, etc.) directly from the browser.
 
