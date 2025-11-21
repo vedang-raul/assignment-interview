@@ -1,0 +1,229 @@
+/* --- BASE SETTINGS --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0b101b; /* Dark Background */
+    color: #f3f4f6; /* Light Text */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    min-height: 100vh;
+}
+
+/* --- DASHBOARD SPECIFIC LAYOUT --- */
+/* This overrides the centering for the dashboard page */
+body.dashboard-body {
+    display: block;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- CONTAINERS (CARDS) --- */
+.form-container {
+    background-color: #111827; /* Dark Card Color */
+    padding: 2rem;
+    border-radius: 12px;
+    width: 320px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+.dashboard-card {
+    background-color: #111827;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* --- TYPOGRAPHY --- */
+h1 {
+    text-align: left;
+    font-size: 1.8rem;
+    margin-top: 0;
+    color: #f3f4f6;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 0;
+    color: #f3f4f6;
+}
+
+h3 {
+    margin-top: 0;
+    color: #f3f4f6;
+}
+
+p {
+    margin: 0;
+}
+
+/* --- HEADER SECTION --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #374151;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+/* --- FORMS & INPUTS --- */
+.input-group {
+    margin-top: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #9ca3af; /* Gray text */
+    font-size: 0.9rem;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    background-color: #111827;
+    border: 1px solid #374151;
+    border-radius: 6px;
+    color: white;
+    box-sizing: border-box; /* Ensures padding doesn't increase width */
+    margin-bottom: 10px;
+}
+
+input:focus {
+    border-color: #a78bfa; /* Purple border on click */
+    outline: none;
+}
+
+/* --- BUTTONS --- */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.2s;
+}
+
+/* Primary Button (Sign In / Register) */
+.sign {
+    width: 100%;
+    padding: 12px;
+    background-color: #8b5cf6; /* Purple */
+    margin-top: 20px;
+}
+
+.sign:hover {
+    background-color: #7c3aed;
+}
+
+/* Create Task Button */
+.btn-create {
+    width: 100%;
+    padding: 10px;
+    background-color: #8b5cf6; /* Purple */
+    margin-top: 10px;
+}
+
+.btn-create:hover {
+    background-color: #7c3aed;
+}
+
+/* Logout Button */
+.btn-logout {
+    padding: 8px 16px;
+    background-color: #374151; /* Gray */
+}
+
+.btn-logout:hover {
+    background-color: #4b5563;
+}
+
+/* Action Buttons (Done / Delete) */
+.task-actions button {
+    padding: 6px 12px;
+    margin-left: 5px;
+}
+
+.btn-done {
+    background-color: #10b981; /* Green */
+}
+
+.btn-done:hover {
+    background-color: #059669;
+}
+
+.btn-del {
+    background-color: #ef4444; /* Red */
+}
+
+.btn-del:hover {
+    background-color: #dc2626;
+}
+
+/* --- TASK LIST ITEMS --- */
+.task-item {
+    background-color: #1f2937; /* Slightly lighter gray */
+    border: 1px solid #374151;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between; /* Pushes content and buttons apart */
+    align-items: center;
+}
+
+.task-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.task-content p {
+    color: #9ca3af; /* Gray description */
+    font-size: 0.9rem;
+}
+
+.task-meta {
+    font-size: 0.8rem;
+    color: #6b7280; /* Darker gray for author name */
+    margin-top: 8px;
+}
+
+/* Completed Task Styling */
+.completed .task-content h3 {
+    text-decoration: line-through;
+    color: #6b7280;
+}
+
+/* --- LINKS & UTILITIES --- */
+.signup {
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 20px;
+    color: #9ca3af;
+}
+
+.signup a, .forgot a {
+    color: #f3f4f6;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.signup a:hover {
+    text-decoration: underline;
+    color: #a78bfa;
+}
+
+.hidden {
+    display: none;
+}
+
+.error {
+    color: #ef4444;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
