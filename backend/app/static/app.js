@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:8000/api/v1";
+const API_URL = "/api/v1";
 
 // --- HELPER: DECODE JWT (To read the Role) ---
 function parseJwt(token) {
@@ -47,7 +47,7 @@ async function login() {
             const payload = parseJwt(data.access_token);
             localStorage.setItem("role", payload.role); // "admin" or "user"
 
-            window.location.href = "dashboard.html";
+            window.location.href = "/dashboard";
         } else {
             msg.innerText = "Login failed: " + (data.detail || "Unknown error");
         }
@@ -102,7 +102,7 @@ async function register() {
 
 function logout() {
     localStorage.clear(); // Clears token AND role
-    window.location.href = "index.html";
+    window.location.href = "/";
 }
 
 // --- RBAC UI LOGIC ---
