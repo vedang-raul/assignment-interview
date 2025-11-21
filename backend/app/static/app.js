@@ -65,6 +65,23 @@ async function register() {
     const adminCodeInput = document.getElementById("reg-admin");
     const msg = document.getElementById("auth-msg");
 
+    msg.innerText = "";
+
+    if (usernameInput.value.length <3){
+            msg.innerText = "Username must be at least 3 characters long.";
+            return;
+        }
+
+    if (usernameInput.value.length >50){
+            msg.innerText = "Username must be less than 50 characters.";
+            return;
+        }
+
+    if (passwordInput.value.length < 6){
+            msg.innerText = "Password must be at least 6 characters long.";
+            return;
+        }
+
     // 2. EXTRACT VALUES FOR PAYLOAD
     const payload = { 
         username: usernameInput.value, 
@@ -80,6 +97,9 @@ async function register() {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload)
         });
+
+        
+        
 
         const data = await res.json();
 
