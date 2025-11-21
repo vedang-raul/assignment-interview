@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Tasks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-body">
+
+    <header>
+        <h1>Task Dashboard</h1>
+        <button class="btn-logout" onclick="logout()">Logout</button>
+    </header>
+
+    <!-- CREATE TASK (Admin Only) -->
+    <!-- Using 'dashboard-card' for the dark container style -->
+    <div id="create-task-section" class="dashboard-card">
+        <h3>Create New Task</h3>
+        
+        <div class="input-group">
+            <input type="text" id="task-title" placeholder="Task Title">
+            <input type="text" id="task-desc" placeholder="Description">
+        </div>
+
+        <button class="btn-create" onclick="createTask()">+ Add Task</button>
+    </div>
+
+    <!-- TASK LIST -->
+    <h3>Your Tasks</h3>
+    <div id="tasks-container">
+        <div style="text-align: center; color: #9ca3af; margin-top: 20px;">Loading tasks...</div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Security Check: Redirect if not logged in
+        if(!localStorage.getItem("token")) window.location.href = "index.html";
+        
+        // Initialize UI and Fetch Data
+        applyRoleBasedUI(); 
+        fetchTasks();
+    </script>
+</body>
+</html>
